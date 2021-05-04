@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C83EAF5B-74EE-4AB6-AB10-13337A7A2152}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SHU_SWB_Project</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)lib\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>winmm.lib;dsound.lib;dxguid.lib;dinput8.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;d3dx9d.lib;d3d9.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Framework\Audio\AudioManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Audio\Wave.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Collision\AABB.cpp" />
+    <ClCompile Include="src\Framework\Collision\CollisionGroup.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Collision\CollisionManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\EventManager\Event.cpp" />
+    <ClCompile Include="src\Framework\EventManager\EventManager.cpp" />
+    <ClCompile Include="src\Framework\GameObjects\Components\AABBColliderComponent.cpp" />
+    <ClCompile Include="src\Framework\GameObjects\Components\CameraComponent.cpp" />
+    <ClCompile Include="src\Framework\GameObjects\Components\MovementComponent.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\GameObjects\Components\SpriteAnimationComponent.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\GameObjects\Components\TransformComponent.cpp" />
+    <ClCompile Include="src\Framework\GameObjects\GameObject.cpp" />
+    <ClCompile Include="src\Framework\Math\Matrix4.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Math\Plane.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Math\Transform.cpp" />
+    <ClCompile Include="src\Framework\Math\Vector3.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Platform\Platform.cpp" />
+    <ClCompile Include="src\Framework\Kernel\Kernel.cpp" />
+    <ClCompile Include="src\Framework\Renderer\Mesh\MeshManager.cpp" />
+    <ClCompile Include="src\Framework\Renderer\Renderer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Renderer\Sprite\SpriteAnimation.cpp" />
+    <ClCompile Include="src\Framework\Renderer\Sprite\SpriteManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Renderer\Texture\TextureManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Utilities\Timer.cpp" />
+    <ClCompile Include="src\Game\GameApplication.cpp" />
+    <ClCompile Include="src\Game\GameObjects\Camera.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Game\GameObjects\Dice.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Game\GameObjects\Floor.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Game\GameObjects\MemoryGame\Card.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Game\GameObjects\MouseIndicator.cpp" />
+    <ClCompile Include="src\Game\GameObjects\PointLight.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Game\GameObjects\SpriteExplosion.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Game\GameTask.cpp" />
+    <ClCompile Include="src\Game\MemoryGameTask.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Game\TextScreens.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Game\TraceHUD.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Input\DInputManager.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Renderer\DirectXRenderer.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Audio\DSoundManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\WindowsPlatform\Renderer\Font\FontD3D.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Components\LightD3DComponent.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Renderer\Mesh\MeshD3D.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Components\MeshD3DComponent.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Renderer\Sprite\SpriteD3D.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Renderer\Texture\TextureD3D.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\WindowsPlatform\Utilities\TimerWindows.cpp" />
+    <ClCompile Include="src\WindowsPlatform\Audio\WaveDBuffer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\WindowsPlatform\WindowsPlatformTask.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Framework\Application\Application.h" />
+    <ClInclude Include="src\Framework\Audio\AudioManager.h" />
+    <ClInclude Include="src\Framework\Audio\SoundId.h" />
+    <ClInclude Include="src\Framework\Audio\SoundObject.h" />
+    <ClInclude Include="src\Framework\Audio\Wave.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Collision\AABB.h" />
+    <ClInclude Include="src\Framework\Collision\CollisionGroup.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Collision\CollisionManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\EventManager\Event.h" />
+    <ClInclude Include="src\Framework\EventManager\EventData.h" />
+    <ClInclude Include="src\Framework\EventManager\EventHandler.h" />
+    <ClInclude Include="src\Framework\EventManager\EventId.h" />
+    <ClInclude Include="src\Framework\EventManager\EventManager.h" />
+    <ClInclude Include="src\Framework\GameObjects\Component.h" />
+    <ClInclude Include="src\Framework\GameObjects\ComponentId.h" />
+    <ClInclude Include="src\Framework\GameObjects\Components\AABBColliderComponent.h" />
+    <ClInclude Include="src\Framework\GameObjects\Components\CameraComponent.h" />
+    <ClInclude Include="src\Framework\GameObjects\Components\MeshComponent.h" />
+    <ClInclude Include="src\Framework\GameObjects\Components\MovementComponent.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\GameObjects\Components\SpriteAnimationComponent.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\GameObjects\Components\TransformComponent.h" />
+    <ClInclude Include="src\Framework\GameObjects\GameObject.h" />
+    <ClInclude Include="src\Framework\Math\Matrix4.h" />
+    <ClInclude Include="src\Framework\Math\Plane.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Math\Transform.h" />
+    <ClInclude Include="src\Framework\Math\Vector3.h" />
+    <ClInclude Include="src\Framework\Platform\Platform.h" />
+    <ClInclude Include="src\Framework\Kernel\Kernel.h" />
+    <ClInclude Include="src\Framework\Kernel\Task.h" />
+    <ClInclude Include="src\Framework\Renderer\Mesh\Mesh.h" />
+    <ClInclude Include="src\Framework\Renderer\Mesh\MeshId.h" />
+    <ClInclude Include="src\Framework\Renderer\Mesh\MeshManager.h" />
+    <ClInclude Include="src\Framework\Renderer\Renderer.h" />
+    <ClInclude Include="src\Framework\Renderer\Sprite\Sprite.h" />
+    <ClInclude Include="src\Framework\Renderer\Sprite\SpriteAnimation.h" />
+    <ClInclude Include="src\Framework\Renderer\Sprite\SpriteId.h" />
+    <ClInclude Include="src\Framework\Renderer\Sprite\SpriteManager.h" />
+    <ClInclude Include="src\Framework\Renderer\Texture\Texture.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Renderer\Texture\TextureId.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Renderer\Texture\TextureManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Utilities\Color.h" />
+    <ClInclude Include="src\Framework\Utilities\Frustum.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Utilities\Singleton.h" />
+    <ClInclude Include="src\Framework\Utilities\Timer.h" />
+    <ClInclude Include="src\Framework\Utilities\UnorderedMapContainer.h" />
+    <ClInclude Include="src\Framework\Utilities\Utils.h" />
+    <ClInclude Include="src\Game\GameApplication.h" />
+    <ClInclude Include="src\Game\GameObjects\Camera.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\GameObjects\Dice.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\GameObjects\Floor.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\GameObjects\MemoryGame\Card.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\GameObjects\MouseIndicator.h" />
+    <ClInclude Include="src\Game\GameObjects\PointLight.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\GameObjects\SpriteExplosion.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\GameTask.h" />
+    <ClInclude Include="src\Game\MemoryGameTask.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\TextScreens.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\Game\TraceHUD.h" />
+    <ClInclude Include="src\WindowsPlatform\Input\DInputManager.h" />
+    <ClInclude Include="src\WindowsPlatform\Renderer\DirectXRenderer.h" />
+    <ClInclude Include="src\WindowsPlatform\Audio\DSoundManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\WindowsPlatform\Renderer\Font\FontD3D.h" />
+    <ClInclude Include="src\WindowsPlatform\Components\LightD3DComponent.h" />
+    <ClInclude Include="src\WindowsPlatform\Renderer\Mesh\MeshD3D.h" />
+    <ClInclude Include="src\WindowsPlatform\Components\MeshD3DComponent.h" />
+    <ClInclude Include="src\WindowsPlatform\Renderer\Sprite\SpriteD3D.h" />
+    <ClInclude Include="src\WindowsPlatform\Renderer\Texture\TextureD3D.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\WindowsPlatform\Utilities\TimerWindows.h" />
+    <ClInclude Include="src\WindowsPlatform\Audio\WaveDBuffer.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\WindowsPlatform\WindowsPlatformTask.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\data\dice.X" />
+    <None Include="bin\data\floor_1.X" />
+    <None Include="bin\data\sphere.X" />
+    <None Include="bin\data\sphere_flipped_n.X" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="bin\data\audio\laser.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bin\data\explosion.png" />
+    <Image Include="bin\data\memory_sheet.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
